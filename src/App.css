@@ -1,38 +1,104 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.app {
+  padding: 40px;
+}
+.ref-wrap {
+  position: relative;
+}
+.plus-btn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 50%;
+  border: 2px solid greenyellow;
+  font-size: 32px;
+  line-height: 32px;
+  color: greenyellow;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.plus-btn:hover {
+  color:white;
+  background-color: greenyellow;
+}
+
+.contents.on .insert-wrap {
+  display: block;
+}
+
+.insert-wrap {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 64px;
+  background-color: #d7dafa;
+  z-index: 99;
+  padding: 40px;
+  border: 1px solid;
+  border-radius: 8px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.insert-wrap h2 {
+  margin: 0 0 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-wrap form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.input-wrap form input {
+  width: 100%;
+  text-align: center;
+  padding: 8px 12px;
+}
+.input-wrap form input:first-of-type {
+  margin-bottom: 8px;
+}
+.input-wrap form input:last-of-type {
+  background-color: #afaafa;
+  border: 2px solid purple;
+}
+
+.list-wrap {
+  height: 600px;
+  padding: 40px;
+  background-color: #efefef;
+  border: 1px solid #000;
+}
+.list-wrap h2 {
+  margin-bottom: 20px;
+}
+.list-wrap ul {
+  background-color: white;
+  padding: 20px;
+  height: calc(100% - 54px);
+  overflow-y: auto;
+}
+.list-wrap ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-wrap ul li:not(:first-of-type) {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #efefef;
+}
+
+.list-wrap ul li button {
+  background-color: black;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  padding: 4px 8px;
+  letter-spacing: -1px;
+  cursor: pointer;
 }
