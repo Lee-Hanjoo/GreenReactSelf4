@@ -50,12 +50,16 @@ let List = ({data, setData}) => {
     let listItem = data.map((obj,i)=>{
         let delFun = (e) => {
             listItemRef.current.splice(i, 1)
-            //usuallyData는 지금의 데이터. 지금의 데이터를 필터로 가공해서 다시 data에 넣어줄거임. 
+            // usuallyData는 지금의 데이터. 지금의 데이터를 필터로 가공해서 다시 data에 넣어줄거임. 
             setData((usuallyData) => usuallyData.filter((_, index) => index !== i));
+            // 얜 지금 내가 심어준 id값이 없어서 실행안됨.
+            // let a = data.filter((obj) => obj.id !== e);
+            // setData(a);
         }
         return  <li ref={(li)=>{listItemRef.current[i] = li}} key={i}>
+        {/* return  <li ref={(li)=>{listItemRef.current[i] = li}} key={obj.id}> */}
                     <p>{i + 1}. {obj.name}</p>
-                    <button type='button' className='delete-btn' onClick={delFun}>삭제</button>
+                    <button type='button' className='delete-btn' onClick={()=>{delFun(obj.id)}}>삭제</button>
                 </li>
     })
     return (
